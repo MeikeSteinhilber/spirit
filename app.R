@@ -1,11 +1,4 @@
-#
-# This is a Shiny web application. You can run the application by clicking
-# the 'Run App' button above.
-#
-# Find out more about building applications with Shiny here:
-#
-#    http://shiny.rstudio.com/
-#
+
 
 library(shiny)
 
@@ -13,36 +6,72 @@ library(shiny)
 ui <- fluidPage(
 
     # Application title
-    titlePanel("Old Faithful Geyser Data"),
+    titlePanel("Sequential t-test example"),
+    
+    
+    # Data Input
+    sidebarLayout(
+        sidebarPanel(
+            fileInput("upload"
+                      , "Select File"
+                      , accept = ".csv, .rds"
+                     )
+        ),
+        
+        # Show a plot of the generated distribution
+        mainPanel(
+            verbatimTextOutput("seq_ttest_results")
+        )
+    ),
 
     # Sidebar with a slider input for number of bins 
     sidebarLayout(
         sidebarPanel(
-            sliderInput("bins",
-                        "Number of bins:",
+            sliderInput("N",
+                        "Sample Size:",
                         min = 1,
                         max = 50,
-                        value = 30)
+                        value = 120)
         ),
 
         # Show a plot of the generated distribution
         mainPanel(
-           plotOutput("distPlot")
+            dataTableOutput("data")
         )
     )
 )
 
 # Define server logic required to draw a histogram
 server <- function(input, output) {
-
-    output$distPlot <- renderPlot({
-        # generate bins based on input$bins from ui.R
-        x    <- faithful[, 2]
-        bins <- seq(min(x), max(x), length.out = input$bins + 1)
-
-        # draw the histogram with the specified number of bins
-        hist(x, breaks = bins, col = 'darkgray', border = 'white')
+    # Allow upload files with 10 MB
+    options(shiny.maxRequestSize = 10 * 1024^2)
+    
+    reactive({
+        req(input$upload)
     })
+
+    output$data <- renderDataTable({
+        
+        if (is.null(input$upload))
+            return(NULL)
+        
+        # load(input$upload$datapath)
+       df <- read.csv(input$upload$datapath)
+       df[1:input$N, ]
+    })
+    
+    set.seed(333)
+    output$seq_ttest_results <- renderPrint({
+        # x <- rnorm(input$N, mean = 110, sd = 15)
+        df <-  read.csv(input$upload$datapath)
+        x <- df[1:input$N, 3]
+        d <- 0.30
+        
+        # sprtt::seq_ttest(x = x, mu = 120, d = d)
+        sprtt::seq_ttest(x = x , mu = 7, d = d)
+    })
+    
+
 }
 
 # Run the application 
