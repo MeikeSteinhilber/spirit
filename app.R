@@ -42,7 +42,7 @@ ui <- fluidPage(
                                 max = 200,
                                 value = 3)
             ),
-            numericInput("x_group", "Column Number of Group 1 (Data x)", value = NULL),
+            numericInput("x_group", "Column Number of Group 1 (Data x)", value = 1),
             numericInput("y_group", "Column Number of Group 2 (Data y)", value = NULL),
             checkboxInput("paired", "Paired Data (Repeated Measures)"),
             sliderInput("d",
