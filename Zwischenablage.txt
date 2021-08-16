@@ -17,12 +17,86 @@ get_colum_names <- function(input) {
 ui <- fluidPage(
     # Application title
     titlePanel("Sequential t-tests"),
-    
-    tabsetPanel( 
+
+    tabsetPanel(
         tabPanel(
             "Data"
             , "Please upload a data file or use the given examplary data
             frames."
+            , # Data Input
+            sidebarLayout(
+                sidebarPanel(
+                    fileInput("upload"
+                              , "Upload File (.csv, .xlsx, .txt)"
+                              , accept = ".csv, .xlsx, .txt"
+                    ),
+                    checkboxInput("load_example_data", "Load Examplary Data", value = FALSE),
+                    checkboxInput("header", "Header", value = TRUE),
+                    radioButtons(
+                        "seperator"
+                        , "Select Seperator String"
+                        , choices = list(
+                            "Semicolon" = ";"
+                            , "Empty Space" = ""
+                            , "Tab" = "\t"
+                            , "Comma" = ","
+                        )
+                    ),
+                    conditionalPanel(
+                        condition = "input.load_example_data == true",
+                        radioButtons(
+                            "example_data"
+                            , "Select Data Frame"
+                            , choices = list("df_cancer", "df_stress", "df_income")
+                        )
+                    ),
+
+                    ),
+                    checkboxInput("long_data", "Long Data Format", value = FALSE),
+                    conditionalPanel(
+                        condition = "input.long_data == false",
+                        numericInput("x_group_long_false"
+                                     , "Column Number of Group 1 (Data x)"
+                                     , value = NULL),
+                        numericInput("y_group_long_false"
+                                     , "Column Number of Group 2 (Data y)"
+                                     , value = NULL),
+                    ),
+                    conditionalPanel(
+                        condition = "input.long_data == true",
+                        numericInput("x_group_long_true"
+                                     , "Column Number of x (numeric variable)"
+                                     , value = NULL),
+                        numericInput("y_group_long_true"
+                                     , "Column Number of y (factor variable)"
+                                     , value = NULL),
+
+                    ),
+
+                    checkboxInput("paired", "Paired Data (Repeated Measures)"),
+                    sliderInput("d",
+                                "Cohen's d:",
+                                min = 0,
+                                max = 1,
+                                value = 0.3,
+                                step = 0.05
+                    ),
+                ),
+
+                # Show test results and the data
+                mainPanel(
+                    checkboxInput("display_data", "Show Data Table", value = TRUE),
+                    checkboxInput("id", "Add Row Numbers (ID)", value = FALSE),
+                    conditionalPanel(
+                        condition = "input.display_data == true",
+                        dataTableOutput("data")
+                    )
+                )
+            )
+        )
+        , tabPanel(
+            "Test Specification"
+            , "Please specify the"
             , # Data Input
             sidebarLayout(
                 sidebarPanel(
@@ -78,9 +152,9 @@ ui <- fluidPage(
                         numericInput("y_group_long_true"
                                      , "Column Number of y (factor variable)"
                                      , value = NULL),
-                        
+
                     ),
-                    
+
                     checkboxInput("paired", "Paired Data (Repeated Measures)"),
                     sliderInput("d",
                                 "Cohen's d:",
@@ -98,7 +172,7 @@ ui <- fluidPage(
                                                   , "greater (one-sided)" = "greater"
                                                   , "less (one-sided)" = "less")),
                 ),
-                
+
                 # Show test results and the data
                 mainPanel(
                     checkboxInput("verbose", "Verbose Output", value = TRUE),
@@ -112,24 +186,19 @@ ui <- fluidPage(
                 )
             )
         )
-        , tabPanel(
-            "Test Specification"
-            , "contents"
-            , 
-        )
     ),
 
 
 
 
-    
+
 )
 
 # Define server ----------------------------------------------------------------
 server <- function(input, output) {
     # Allow upload files with 10 MB
     options(shiny.maxRequestSize = 10 * 1024^2)
-    
+
     reactive({
         # req(input$upload)
         # req(input$x_group)
@@ -139,7 +208,7 @@ server <- function(input, output) {
     output$data <- renderDataTable({
         preprocess_data(input)
     })
-    
+
     output$seq_ttest_results <- renderPrint({
         data <- preprocess_data(input)
 
@@ -157,7 +226,7 @@ server <- function(input, output) {
             )
         } else if ((input$long_data == FALSE)) {
             x <- data[, input$x_group_long_false]
-            
+
             if (!is.na(input$y_group_long_false)) {
                 y <- data[, input$y_group_long_false]
             } else{
@@ -178,5 +247,3 @@ server <- function(input, output) {
 
 # Run the application ----------------------------------------------------------
 shinyApp(ui = ui, server = server)
-
-
