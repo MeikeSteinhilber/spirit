@@ -19,18 +19,23 @@ ui <- fluidPage(
     titlePanel("Sequential t-tests"),
     
     tabsetPanel( 
+        # 1. Panel -------------------------------------------------------------
         tabPanel(
             "Data"
-            , "Please upload a data file or use the given examplary data
-            frames."
-            , # Data Input
-            sidebarLayout(
+            , br()
+            , fluidRow(
+                column(4,
+                    "Please upload a data file or use the given examplary data
+                       frames."
+                       ),
+                column(3, checkboxInput("load_example_data", "Load Examplary Data", value = FALSE))
+            )
+            , sidebarLayout(
                 sidebarPanel(
                     fileInput("upload"
                               , "Upload File (.csv, .xlsx, .txt)"
                               , accept = ".csv, .xlsx, .txt"
                     ),
-                    checkboxInput("load_example_data", "Load Examplary Data", value = FALSE),
                     checkboxInput("header", "Header", value = TRUE),
                     radioButtons(
                         "seperator"
@@ -42,14 +47,8 @@ ui <- fluidPage(
                             , "Comma" = ","
                         )
                     ),
-                    conditionalPanel(
-                        condition = "input.load_example_data == true",
-                        radioButtons(
-                            "example_data"
-                            , "Select Data Frame"
-                            , choices = list("df_cancer", "df_stress", "df_income")
-                        )
-                    ),
+
+                    hr(),
                     checkboxInput("na.rm", "Remove Missing Values", value = TRUE),
                     checkboxInput("N_reduction", "Reduce the Sample Size", value = FALSE),
                     conditionalPanel(
@@ -81,6 +80,36 @@ ui <- fluidPage(
                         
                     ),
                     
+                ),
+                
+                # Show test results and the data
+                mainPanel(
+                    conditionalPanel(
+                        condition = "input.load_example_data == true",
+                        radioButtons(
+                            "example_data"
+                            , "Select Data Frame"
+                            , choices = list("df_cancer", "df_stress", "df_income")
+                        )
+                    ),
+                    checkboxInput("display_data", "Show Data Table", value = TRUE),
+                    checkboxInput("id", "Add Row Numbers (ID)", value = FALSE),
+                    conditionalPanel(
+                        condition = "input.display_data == true",
+                        dataTableOutput("data")
+                    )
+                )
+            )
+        )
+        # 2. Panel -------------------------------------------------------------
+        , tabPanel(
+            "Test Specification"
+            , br()
+            , "contents"
+            , br()
+            , br()
+            , sidebarLayout(
+                sidebarPanel(
                     checkboxInput("paired", "Paired Data (Repeated Measures)"),
                     sliderInput("d",
                                 "Cohen's d:",
@@ -94,36 +123,24 @@ ui <- fluidPage(
                     numericInput("power", "Power", value = 0.95, min = 0, max = 1, step = 0.01),
                     radioButtons("alternative"
                                  , "Specification of the Alternative Hypothesis"
-                                 , choices = list("two-sided" = "two.sided"
-                                                  , "greater (one-sided)" = "greater"
-                                                  , "less (one-sided)" = "less")),
+                                 , choices = list(
+                                     "two-sided" = "two.sided"
+                                    , "greater (one-sided)" = "greater"
+                                    , "less (one-sided)" = "less"
+                                )
+                    ),
                 ),
                 
                 # Show test results and the data
                 mainPanel(
                     checkboxInput("verbose", "Verbose Output", value = TRUE),
-                    verbatimTextOutput("seq_ttest_results"),
-                    checkboxInput("display_data", "Show Data Table", value = TRUE),
-                    checkboxInput("id", "Add Row Numbers (ID)", value = FALSE),
-                    conditionalPanel(
-                        condition = "input.display_data == true",
-                        dataTableOutput("data")
-                    )
+                    verbatimTextOutput("seq_ttest_results")
                 )
             )
-        )
-        , tabPanel(
-            "Test Specification"
-            , "contents"
-            , 
-        )
-    ),
-
-
-
-
-    
+        ) 
+    )
 )
+
 
 # Define server ----------------------------------------------------------------
 server <- function(input, output) {

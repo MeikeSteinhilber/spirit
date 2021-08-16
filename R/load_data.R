@@ -2,14 +2,22 @@ load_data_frame <- function(input) {
   file_extension <- file_ext(input$upload$datapath)
   
   if (file_extension == "csv") {
-    data <- read.csv(input$upload$datapath, sep = input$seperator)
+    data <- read.csv(input$upload$datapath
+                     , sep = input$seperator
+                     , header = input$header
+            )
   # } else if (file_extension == "rda") {
   #   data <- load(input$upload$datapath)
   } else if (file_extension == "xlsx") {
     library(readxl)
-    data <- read_excel(input$upload$datapath)
+    data <- read_excel(input$upload$datapath
+                       , col_names = input$header
+            )
   }else if (file_extension == "txt") {
-    data <- read.csv(input$upload$datapath, sep = input$seperator)
+    data <- read.csv(input$upload$datapath
+                     , sep = input$seperator
+                     , header = input$header
+            )
   }
   data
 }
