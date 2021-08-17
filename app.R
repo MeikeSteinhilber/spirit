@@ -70,12 +70,8 @@ ui <- fluidPage(
                                     max = 200,
                                     value = 3)
                     ),
+                    hr(),
                     checkboxInput("long_data", "Long Data Format", value = FALSE),
-                    "Please specify the variables for the test by the
-                    column name.",
-                    br(),
-                    br(),
-
                     conditionalPanel(
                         condition = "input.long_data == false"
                         , selectInput("x_name_long_false"
@@ -97,7 +93,9 @@ ui <- fluidPage(
                                       , "Colum Name of y (factor variable)"
                                       , choices = ""
                         )
-                    )
+                    ),
+                    "Please specify the variables for the test by the
+                    column name and adjust the data format, if necessary."
             ),
                 # Show test results and the data
                 mainPanel(
