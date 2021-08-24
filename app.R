@@ -197,7 +197,7 @@ server <- function(session, input, output) {
                                  , alternative = input$alternative
                                  , alpha = input$alpha
                                  , power = input$power
-                                 , na.rm = input$na.rm
+                                 , na.rm = input$na_rm
                                  , verbose = input$verbose
                 )
             } else if ((input$long_data == FALSE)) {
