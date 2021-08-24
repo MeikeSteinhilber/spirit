@@ -26,7 +26,7 @@ ui <- fluidPage(
             , br()
             , fluidRow(
                 column(4,
-                    "Please upload a data file or use the given examplary data
+                    "Upload a data file or use the given examplary data
                        frames."
                     , checkboxInput("load_example_data", "Load Examplary Data", value = FALSE)
                        ),
@@ -39,7 +39,6 @@ ui <- fluidPage(
                                , choices = list("df_cancer", "df_stress", "df_income")
                            )
                        )
-
                 )
             )
             , sidebarLayout(
@@ -97,9 +96,7 @@ ui <- fluidPage(
                                       , "Colum Name of y (factor variable)"
                                       , choices = ""
                         )
-                    ),
-                    "Please specify the variables for the test by the
-                    column name and adjust the data format, if necessary."
+                    )
             ),
                 # Show test results and the data
                 mainPanel(
