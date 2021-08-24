@@ -64,12 +64,13 @@ ui <- fluidPage(
                     bsTooltip("na_rm", "Removes the missing values automatically for the analysis.", "top"),
                     checkboxInput("N_reduction", "Reduce the Sample Size", value = FALSE),
                     conditionalPanel(
-                        condition = "input.N_reduction == true",
-                        sliderInput("N",
-                                    "Sample Size:",
-                                    min = 2,
-                                    max = 200,
-                                    value = 3)
+                        condition = "input.N_reduction == true", 
+                        numericInput("N", "Number of Rows", value = 2)
+                        # sliderInput("N",
+                        #             "Sample Size:",
+                        #             min = 2,
+                        #             max = 60,
+                        #             value = 3)
                     ),
                     hr()
                     , "Specify the variables for the test by the
