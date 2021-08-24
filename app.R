@@ -167,8 +167,8 @@ server <- function(session, input, output) {
     })
 
     observeEvent(
-        observe_colnames() 
-        , { colnames <- c("(None)", colnames(data()))
+        observe_colnames(), {
+            colnames <- c("(None)", colnames(data()))
             updateSelectInput(session, "x_name_long_false", choices = colnames)
             updateSelectInput(session, "y_name_long_false", choices = colnames)
             updateSelectInput(session, "x_name_long_true", choices = colnames)
