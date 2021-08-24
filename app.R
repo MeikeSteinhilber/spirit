@@ -1,4 +1,5 @@
 library(shiny)
+library(shinyBS)
 library(dplyr)
 library(tools)
 library(readxl)
@@ -60,7 +61,8 @@ ui <- fluidPage(
                     ),
 
                     hr(),
-                    checkboxInput("na.rm", "Remove Missing Values", value = TRUE),
+                    checkboxInput("na_rm", "Remove Missing Values", value = TRUE),
+                    bsTooltip("na_rm", "Removes the missing values automatically for the analysis.", "top"),
                     checkboxInput("N_reduction", "Reduce the Sample Size", value = FALSE),
                     conditionalPanel(
                         condition = "input.N_reduction == true",
@@ -70,7 +72,9 @@ ui <- fluidPage(
                                     max = 200,
                                     value = 3)
                     ),
-                    hr(),
+                    hr()
+                    , "Specify the variables for the test by the
+                    column name and adjust the data format, if necessary.",
                     checkboxInput("long_data", "Long Data Format", value = FALSE),
                     conditionalPanel(
                         condition = "input.long_data == false"
