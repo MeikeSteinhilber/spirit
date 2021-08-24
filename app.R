@@ -22,7 +22,7 @@ ui <- fluidPage(
     tabsetPanel( 
         # 1. Panel -------------------------------------------------------------
         tabPanel(
-            "Data"
+            "Select Data"
             , br()
             , fluidRow(
                 column(4,
@@ -112,9 +112,6 @@ ui <- fluidPage(
         # 2. Panel -------------------------------------------------------------
         , tabPanel(
             "Test Specification"
-            , br()
-            , "contents"
-            , br()
             , br()
             , sidebarLayout(
                 sidebarPanel(
@@ -220,7 +217,6 @@ server <- function(session, input, output) {
                 )
             }
         }
-        
     })
 }
 
