@@ -13,8 +13,5 @@ load_data <- function(input) {
     } else if (input$example_data == "df_income") {
       sprtt::df_income
     }
-    
-  } else{
-    return(NULL)
   }
 }
