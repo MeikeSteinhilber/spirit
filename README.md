@@ -1,5 +1,5 @@
 
-# spirit: Shiny App to the `sprtt` Package on CRAN
+# spirit: Shiny App to the [sprtt](https://meikesteinhilber.github.io/sprtt/ "https://meikesteinhilber.github.io/sprtt/") Package on CRAN
 
 <!-- badges: start -->
 
@@ -10,32 +10,33 @@
 
 <!-- badges: end -->
 
-## Overview
+## Open the app
 
-**spirit** is the shiny app to the
+Please click
+[**here**](https://meike-steinhilber.shinyapps.io/spirit/ "https://meike-steinhilber.shinyapps.io/spirit/")
+to open the app in your internet browser!
+
+## Requirements to use the app
+
+-   **Internet connection** (otherwise you have to install the app
+    locally on your computer)
+
+-   No R knowledge is required to use the app
+
+-   No installation of R & RStudio is necessary
+
+The `spirit` app allows you to use the
 [sprtt](https://meikesteinhilber.github.io/sprtt/ "https://meikesteinhilber.github.io/sprtt/")
-package on CRAN. Please click
-[**here**](meike-steinhilber.shinyapps.io/sprtt/ "meike-steinhilber.shinyapps.io/sprtt/")
-to open the app in your browser!
-
-No R knowledge is required to use the app!
-
-The `sprtt` package is the implementation of **s**equential
-**p**robability **r**atio **t**ests using the associated **t**-statistic
-(**sprtt**).
-
-The package contains:
-
--   `seq_ttest()` calculates the sequential test statistic and
-
--   three data sets (`df_income`, `df_stress`, `df_cancer`) to run the
-    examples in the documentation
+package via a user interface. The
+[sprtt](https://meikesteinhilber.github.io/sprtt/ "https://meikesteinhilber.github.io/sprtt/")
+package is the implementation of **s**equential **p**robability
+**r**atio **t**ests using the associated **t**-statistic (**sprtt**).
 
 ## Installation
 
-There is no need to install the shiny app on your computer - you can
-access the app on the internet! Please click
-[**here**](meike-steinhilber.shinyapps.io/sprtt/ "meike-steinhilber.shinyapps.io/sprtt/")
+There is no need to install the `spirit` shiny app on your computer -
+you can access the app on the internet! Please click
+[**here**](https://meike-steinhilber.shinyapps.io/spirit/ "https://meike-steinhilber.shinyapps.io/spirit/")
 to open the app in your browser!
 
 If you want to use the app *without* an internet connection, please
