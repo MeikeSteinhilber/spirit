@@ -16,11 +16,11 @@ knitr::opts_chunk$set(
 options(tibble.print_min = 5, tibble.print_max = 5)
 ```
 
-# sprtt Shiny App
+# spirit: Shiny App to the `sprtt` Package on CRAN
 
 <!-- badges: start -->
 
-[![codecov](https://codecov.io/gh/MeikeSteinhilber/sprtt/branch/master/graph/badge.svg?token=IQHTDTRBAW)](https://codecov.io/gh/MeikeSteinhilber/sprtt)
+[![codecov](https://codecov.io/gh/MeikeSteinhilber/sprtt/branch/master/graph/badge.svg?token=IQHTDTRBAW)](https://codecov.io/gh/MeikeSteinhilber/sprtt) [![R-CMD-check-ubuntu20.04](https://github.com/MeikeSteinhilber/Snowflake/actions/workflows/R-CMD-check-ubuntu20.4.yaml/badge.svg?branch=master)](https://github.com/MeikeSteinhilber/Snowflake/actions/workflows/R-CMD-check-ubuntu20.4.yaml) [![R-CMD-check-windows-macOs](https://github.com/MeikeSteinhilber/Snowflake/actions/workflows/R-CMD-check-windows-macOs.yaml/badge.svg?branch=master)](https://github.com/MeikeSteinhilber/Snowflake/actions/workflows/R-CMD-check-windows-macOs.yaml) [![lint](https://github.com/MeikeSteinhilber/Snowflake/actions/workflows/lint.yaml/badge.svg?branch=master)](https://github.com/MeikeSteinhilber/Snowflake/actions/workflows/lint.yaml)
 
 <!-- badges: end -->
 
