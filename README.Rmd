@@ -20,13 +20,13 @@ options(tibble.print_min = 5, tibble.print_max = 5)
 
 <!-- badges: start -->
 
-[![codecov](https://codecov.io/gh/MeikeSteinhilber/sprtt/branch/master/graph/badge.svg?token=IQHTDTRBAW)](https://codecov.io/gh/MeikeSteinhilber/sprtt) [![R-CMD-check-ubuntu20.04](https://github.com/MeikeSteinhilber/Snowflake/actions/workflows/R-CMD-check-ubuntu20.4.yaml/badge.svg?branch=master)](https://github.com/MeikeSteinhilber/Snowflake/actions/workflows/R-CMD-check-ubuntu20.4.yaml) [![R-CMD-check-windows-macOs](https://github.com/MeikeSteinhilber/Snowflake/actions/workflows/R-CMD-check-windows-macOs.yaml/badge.svg?branch=master)](https://github.com/MeikeSteinhilber/Snowflake/actions/workflows/R-CMD-check-windows-macOs.yaml) [![lint](https://github.com/MeikeSteinhilber/Snowflake/actions/workflows/lint.yaml/badge.svg?branch=master)](https://github.com/MeikeSteinhilber/Snowflake/actions/workflows/lint.yaml)
+[![codecov](https://codecov.io/gh/MeikeSteinhilber/sprtt/branch/master/graph/badge.svg?token=IQHTDTRBAW)](https://codecov.io/gh/MeikeSteinhilber/sprtt) [![R-CMD-check-ubuntu20.04](https://github.com/MeikeSteinhilber/spirit/actions/workflows/R-CMD-check-ubuntu20.4.yaml/badge.svg?branch=master)](https://github.com/MeikeSteinhilber/spirit/actions/workflows/R-CMD-check-ubuntu20.4.yaml) [![R-CMD-check-windows-macOs](https://github.com/MeikeSteinhilber/spirit/actions/workflows/R-CMD-check-windows-macOs.yaml/badge.svg?branch=master)](https://github.com/MeikeSteinhilber/spirit/actions/workflows/R-CMD-check-windows-macOs.yaml) [![lint](https://github.com/MeikeSteinhilber/spirit/actions/workflows/lint.yaml/badge.svg?branch=master)](https://github.com/MeikeSteinhilber/spirit/actions/workflows/lint.yaml)
 
 <!-- badges: end -->
 
 ## Overview
 
-**Snowflake** is the shiny app to the [sprtt](https://meikesteinhilber.github.io/sprtt/ "https://meikesteinhilber.github.io/sprtt/") package on CRAN. Please click [**here**](meike-steinhilber.shinyapps.io/sprtt/ "meike-steinhilber.shinyapps.io/sprtt/") to open the app in your browser!
+**spirit** is the shiny app to the [sprtt](https://meikesteinhilber.github.io/sprtt/ "https://meikesteinhilber.github.io/sprtt/") package on CRAN. Please click [**here**](meike-steinhilber.shinyapps.io/sprtt/ "meike-steinhilber.shinyapps.io/sprtt/") to open the app in your browser!
 
 No R knowledge is required to use the app!
 
@@ -51,5 +51,5 @@ To get a bug fix or to use a feature from the development version, you can insta
 ```{r, eval=FALSE}
 # the installation requires the "devtools" package
 # install.packages("devtools")
-devtools::install_github("MeikeSteinhilber/Snowflake")
+devtools::install_github("MeikeSteinhilber/spirit")
 ```

@@ -1,4 +1,4 @@
 library(testthat)
-library(Snowflake)
+library(spirit)
 
-test_check("Snowflake")
+test_check("spirit")

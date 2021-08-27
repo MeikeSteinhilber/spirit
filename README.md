@@ -1,18 +1,18 @@
 
-# sprtt Shiny App
+# spirit: Shiny App to the `sprtt` Package on CRAN
 
 <!-- badges: start -->
 
 [![codecov](https://codecov.io/gh/MeikeSteinhilber/sprtt/branch/master/graph/badge.svg?token=IQHTDTRBAW)](https://codecov.io/gh/MeikeSteinhilber/sprtt)
-[![R-CMD-check-ubuntu20.04](https://github.com/MeikeSteinhilber/Snowflake/actions/workflows/R-CMD-check-ubuntu20.4.yaml/badge.svg?branch=master)](https://github.com/MeikeSteinhilber/Snowflake/actions/workflows/R-CMD-check-ubuntu20.4.yaml)
-[![R-CMD-check-windows-macOs](https://github.com/MeikeSteinhilber/Snowflake/actions/workflows/R-CMD-check-windows-macOs.yaml/badge.svg?branch=master)](https://github.com/MeikeSteinhilber/Snowflake/actions/workflows/R-CMD-check-windows-macOs.yaml)
-[![lint](https://github.com/MeikeSteinhilber/Snowflake/actions/workflows/lint.yaml/badge.svg?branch=master)](https://github.com/MeikeSteinhilber/Snowflake/actions/workflows/lint.yaml)
+[![R-CMD-check-ubuntu20.04](https://github.com/MeikeSteinhilber/spirit/actions/workflows/R-CMD-check-ubuntu20.4.yaml/badge.svg?branch=master)](https://github.com/MeikeSteinhilber/spirit/actions/workflows/R-CMD-check-ubuntu20.4.yaml)
+[![R-CMD-check-windows-macOs](https://github.com/MeikeSteinhilber/spirit/actions/workflows/R-CMD-check-windows-macOs.yaml/badge.svg?branch=master)](https://github.com/MeikeSteinhilber/spirit/actions/workflows/R-CMD-check-windows-macOs.yaml)
+[![lint](https://github.com/MeikeSteinhilber/spirit/actions/workflows/lint.yaml/badge.svg?branch=master)](https://github.com/MeikeSteinhilber/spirit/actions/workflows/lint.yaml)
 
 <!-- badges: end -->
 
 ## Overview
 
-**Snowflake** is the shiny app to the
+**spirit** is the shiny app to the
 [sprtt](https://meikesteinhilber.github.io/sprtt/ "https://meikesteinhilber.github.io/sprtt/")
 package on CRAN. Please click
 [**here**](meike-steinhilber.shinyapps.io/sprtt/ "meike-steinhilber.shinyapps.io/sprtt/")
@@ -50,5 +50,5 @@ can install the development version from GitHub.
 ``` r
 # the installation requires the "devtools" package
 # install.packages("devtools")
-devtools::install_github("MeikeSteinhilber/Snowflake")
+devtools::install_github("MeikeSteinhilber/spirit")
 ```
