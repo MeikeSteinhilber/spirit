@@ -23,7 +23,8 @@ Imports:
     sprtt,
     tools,
     tibble,
-    writexl
+    writexl,
+    rsconnect
 Encoding: UTF-8
 Language: en-US
 LazyData: true

@@ -16,3 +16,4 @@
 ^CRAN-RELEASE$
 rsconnect/*
 ^app\.R$
+^deploy\.R$
