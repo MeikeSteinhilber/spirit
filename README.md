@@ -3,7 +3,7 @@
 
 <!-- badges: start -->
 
-[![test-coverage](https://github.com/MeikeSteinhilber/Snowflake/actions/workflows/test-coverage.yaml/badge.svg)](https://github.com/MeikeSteinhilber/Snowflake/actions/workflows/test-coverage.yaml)
+[![codecov](https://codecov.io/gh/MeikeSteinhilber/sprtt/branch/master/graph/badge.svg?token=IQHTDTRBAW)](https://codecov.io/gh/MeikeSteinhilber/sprtt)
 
 <!-- badges: end -->
 
