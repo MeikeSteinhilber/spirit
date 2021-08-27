@@ -5,8 +5,6 @@ editor_options:
     mode: gfm
 ---
 
-
-
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(
   echo = TRUE,
@@ -28,7 +26,9 @@ options(tibble.print_min = 5, tibble.print_max = 5)
 
 ## Overview
 
-Snowflake is the shiny app to the sprtt package on CRAN.
+**Snowflake** is the shiny app to the [sprtt](https://meikesteinhilber.github.io/sprtt/ "https://meikesteinhilber.github.io/sprtt/") package on CRAN. Please click [**here**](meike-steinhilber.shinyapps.io/sprtt/ "meike-steinhilber.shinyapps.io/sprtt/") to open the app in your browser!
+
+No R knowledge is required to use the app!
 
 The `sprtt` package is the implementation of **s**equential **p**robability **r**atio **t**ests using the associated **t**-statistic (**sprtt**).
 
@@ -40,6 +40,10 @@ The package contains:
 
 ## Installation
 
+There is no need to install the shiny app on your computer - you can access the app on the internet! Please click [**here**](meike-steinhilber.shinyapps.io/sprtt/ "meike-steinhilber.shinyapps.io/sprtt/") to open the app in your browser!
+
+If you want to use the app *without* an internet connection, please download the app as an R package on your computer. To run the app locally on your computer, R (and RStudio) have to be already installed .
+
 ### Development version from GitHub
 
 To get a bug fix or to use a feature from the development version, you can install the development version from GitHub.
@@ -49,5 +53,3 @@ To get a bug fix or to use a feature from the development version, you can insta
 # install.packages("devtools")
 devtools::install_github("MeikeSteinhilber/Snowflake")
 ```
-
-
