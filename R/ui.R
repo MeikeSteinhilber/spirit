@@ -1,5 +1,8 @@
 ui <- fluidPage(
-  titlePanel("Sequential t-tests"),
+  h1("Spirit"),
+  strong("App to Calculate Sequential t-Tests"),
+  uiOutput("description_text"),
+  br(),
   tabsetPanel( 
     tab_1,
     tab_2

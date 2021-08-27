@@ -2,6 +2,13 @@ server <- function(input, output, session) {
   # allow upload files with max 10 MB
   options(shiny.maxRequestSize = 10 * 1024^2)
   
+  # create text for the UI
+  url_sprtt <- a("sprtt", href="https://meikesteinhilber.github.io/sprtt/")
+  output$description_text <- renderUI({
+    tagList("This is the web shiny app to the", url_sprtt, "package on CRAN.")
+  })
+
+  
   output$tooltips <- renderUI({
     tagList(
       bsTooltip("na_rm", title = "Test", placement = "top")
