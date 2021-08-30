@@ -12,6 +12,7 @@
   #' @importFrom shinyBS bsTooltip
 
 # MAIN APP ---------------------------------------------------------------------
+
 #' @title sprtt shiny app
 #' @description Shiny weg app of the sprtt package to calculate sequential
 #' t-tests.

@@ -7,7 +7,7 @@ calc_seq_ttest <- function(input, data) {
       y <- get_y_data(input, data)
       
       sprtt::seq_ttest(x ~ y
-                       , data = data()
+                       , data = data
                        , mu = input$mu
                        , d = input$d
                        , paired = input$paired
