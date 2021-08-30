@@ -3,7 +3,7 @@
 
 <!-- badges: start -->
 
-[![codecov](https://codecov.io/gh/MeikeSteinhilber/sprtt/branch/master/graph/badge.svg?token=IQHTDTRBAW)](https://codecov.io/gh/MeikeSteinhilber/sprtt)
+[![codecov](https://codecov.io/gh/MeikeSteinhilber/spirit/branch/master/graph/badge.svg?token=9I3uy1Gt8w)](https://codecov.io/gh/MeikeSteinhilber/spirit)
 [![R-CMD-check-ubuntu20.04](https://github.com/MeikeSteinhilber/spirit/actions/workflows/R-CMD-check-ubuntu20.4.yaml/badge.svg?branch=master)](https://github.com/MeikeSteinhilber/spirit/actions/workflows/R-CMD-check-ubuntu20.4.yaml)
 [![R-CMD-check-windows-macOs](https://github.com/MeikeSteinhilber/spirit/actions/workflows/R-CMD-check-windows-macOs.yaml/badge.svg?branch=master)](https://github.com/MeikeSteinhilber/spirit/actions/workflows/R-CMD-check-windows-macOs.yaml)
 [![lint](https://github.com/MeikeSteinhilber/spirit/actions/workflows/lint.yaml/badge.svg?branch=master)](https://github.com/MeikeSteinhilber/spirit/actions/workflows/lint.yaml)
