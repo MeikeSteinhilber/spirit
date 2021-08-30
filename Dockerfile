@@ -6,4 +6,5 @@ COPY app.R app.R
 COPY DESCRIPTION DESCRIPTION
 COPY deploy.R deploy.R
 COPY R /R
+COPY inst /inst
 CMD Rscript deploy.R
