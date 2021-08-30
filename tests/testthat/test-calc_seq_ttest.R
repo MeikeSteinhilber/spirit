@@ -204,3 +204,28 @@ test_that("calc_seq_ttest: xlsx & wideformt", {
   shiny_result@data_name <- sprtt_result@data_name
   expect_equal(shiny_result, sprtt_result)
 })
+
+# No Data: Text  ---------------------------------------------------------------
+test_that("calc_seq_ttest: no data selected -> show text", {
+  df <- NULL
+  input <- list(
+    mu = 0,
+    d = 0.3,
+    paired = FALSE,
+    alternative = "two.sided",
+    alpha = 0.05,
+    power = 0.95,
+    na_rm = TRUE,
+    verbose = TRUE
+  )
+  
+  input$long_data <- FALSE
+  input$x_name_long_false <- "control"
+  input$y_name_long_false <- "treatment"
+
+  expect_equal(
+    calc_seq_ttest(input, df),
+    cat("No data available.
+        Upload you own data or select an examplary data set.")
+  )
+})
