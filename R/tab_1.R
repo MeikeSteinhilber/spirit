@@ -24,7 +24,6 @@ tab_1 <- tabPanel(
                 , "Upload File (.csv, .xlsx, .txt)"
                 , accept = ".csv, .xlsx, .txt"
       ),
-      checkboxInput("header", "Header", value = TRUE),
       radioButtons(
         "seperator"
         , "Select Seperator String"

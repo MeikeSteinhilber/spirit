@@ -8,8 +8,7 @@ test_that("load_data_frame: check input csv", {
   utils::write.csv(df, path, row.names = FALSE)
   input <- list(
     upload = list(datapath = path),
-    seperator = ",",
-    header = TRUE
+    seperator = ","
   )
   expect_equal(load_data_frame(input), df)
 })
@@ -24,8 +23,7 @@ test_that("load_data_frame: check input xlsx", {
   writexl::write_xlsx(df, path)
   input <- list(
     upload = list(datapath = path),
-    seperator = ",",
-    header = TRUE
+    seperator = ","
   )
   expect_equal(load_data_frame(input), df)
 })
@@ -40,8 +38,7 @@ test_that("load_data_frame: check input txt", {
   utils::write.table(df, path, sep = "\t", col.names = TRUE, row.names = FALSE)
   input <- list(
     upload = list(datapath = path),
-    seperator = "\t",
-    header = TRUE
+    seperator = "\t"
   )
   expect_equal(load_data_frame(input), df)
 })

@@ -11,7 +11,6 @@ test_that("preprocess_data: uploaded data", {
   input <- list(
     upload = list(datapath = path),
     seperator = ",",
-    header = TRUE,
     load_example_data = FALSE,
     N_reduction = FALSE,
     N = NULL,
@@ -29,7 +28,6 @@ test_that("preprocess_data: ID no syst. crash", {
   input <- list(
     upload = NULL,
     seperator = ",",
-    header = TRUE,
     load_example_data = FALSE,
     N_reduction = FALSE,
     N = NULL,
@@ -55,7 +53,6 @@ test_that("preprocess_data: add ID", {
   input <- list(
     upload = list(datapath = path),
     seperator = ",",
-    header = TRUE,
     load_example_data = FALSE,
     N_reduction = FALSE,
     N = NULL,
@@ -82,7 +79,6 @@ test_that("preprocess_data: reduce data", {
   input <- list(
     upload = list(datapath = path),
     seperator = ",",
-    header = TRUE,
     load_example_data = FALSE,
     N_reduction = TRUE,
     N = 10,
