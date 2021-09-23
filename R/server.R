@@ -8,7 +8,6 @@ server <- function(input, output, session) {
     tagList("This is the web shiny app to the", url_sprtt, "package on CRAN.")
   })
 
-  
   output$tooltips <- renderUI({
     tagList(
       bsTooltip("na_rm", title = "Test", placement = "top")
