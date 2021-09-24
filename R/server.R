@@ -3,16 +3,17 @@ server <- function(input, output, session) {
   options(shiny.maxRequestSize = 10 * 1024^2)
   
   # create text for the UI
-  url_sprtt <- a("sprtt", href = "https://meikesteinhilber.github.io/sprtt/")
+  
   output$description_text <- renderUI({
+    url_sprtt <- a("sprtt", href = "https://meikesteinhilber.github.io/sprtt/")
     tagList("This is the web shiny app to the", url_sprtt, "package on CRAN.")
   })
 
-  output$tooltips <- renderUI({
-    tagList(
-      bsTooltip("na_rm", title = "Test", placement = "top")
-    )
-  })
+  # output$tooltips <- renderUI({
+  #   tagList(
+  #     bsTooltip("na_rm", title = "Test", placement = "top")
+  #   )
+  # })
   
   # create data() function
   data <- reactive({
