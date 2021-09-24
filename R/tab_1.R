@@ -1,5 +1,6 @@
 tab_1 <- tabPanel(
-  "Select Data"
+  title = "Select Data"
+  , value = "tab_1"
   , br()
   , fluidRow(
     column(4,
