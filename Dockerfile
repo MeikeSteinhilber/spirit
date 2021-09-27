@@ -26,4 +26,5 @@ COPY app.R app.R
 COPY DESCRIPTION DESCRIPTION
 COPY deploy.R deploy.R
 COPY /R ./R
+COPY /www ./www
 CMD Rscript deploy.R
