@@ -1,13 +1,35 @@
 server <- function(input, output, session) {
   # allow upload files with max 10 MB
-  options(shiny.maxRequestSize = 10 * 1024^2)
+  # options(shiny.maxRequestSize = 10 * 1024^2)
   
   # create text for the UI
   
   output$description_text <- renderUI({
-    url_sprtt <- a("sprtt", href = "https://meikesteinhilber.github.io/sprtt/")
-    tagList("This is the web shiny app to the", url_sprtt, "package on CRAN.")
+    tagList(
+      "This is the web shiny app to the",
+      a("sprtt", href = "https://meikesteinhilber.github.io/sprtt/"),
+      "package on CRAN."
+    )
   })
+  
+  output$developer_information_text <- renderUI({
+    tagList(
+      "Developed by",
+      a("Meike Steinhilber", href = "https://methoden.amd.psychologie.uni-mainz.de/steinhilber/"),
+      " (2021)",
+      br(),
+    a(img(src = "github.png", height = 31, width = 31), href = "https://github.com/MeikeSteinhilber"),
+    a(img(src = "twitter.png", height = 27, width = 27), href = "https://twitter.com/M_Steinhilber")
+    )
+  })
+  
+  # output$github_pic <- renderImage({
+  #   list(src = "github.png",
+  #        contentType = 'image/png',
+  #        width = 30,
+  #        height = 30,
+  #        alt = "This is alternate text")
+  # }, deleteFile=FALSE)
 
   # output$tooltips <- renderUI({
   #   tagList(

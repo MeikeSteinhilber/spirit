@@ -1,5 +1,5 @@
 tab_2 <- tabPanel(
-  title = "Test Specification"
+  title = "Test Specification and Test Results"
   , value = "tab_2"
   , br()
   , sidebarLayout(
@@ -29,7 +29,7 @@ tab_2 <- tabPanel(
     mainPanel(
       checkboxInput("verbose", "Verbose Output", value = TRUE),
       verbatimTextOutput("seq_ttest_results"),
-      dataTableOutput("test")
+      dataTableOutput("test"),
     )
   )
 ) 

@@ -8,6 +8,8 @@ ui <- function(request) {
       id = "tabs_id",
       tab_1,
       tab_2
-    )
+    ),
+    uiOutput("developer_information_text"),
+    br()
   )
 }
