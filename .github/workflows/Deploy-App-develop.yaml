@@ -4,11 +4,7 @@ name: Deploy-App-spirit-development
 on:
   push:
     branches: [ develop ]
-<<<<<<< HEAD
   pull_request:
-=======
-  pull:
->>>>>>> develop
     branches: [ develop ]
 
   # Allows you to run this workflow manually from the Actions tab
