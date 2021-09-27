@@ -14,7 +14,7 @@ test_that("myApp: snapshot", {
   app$takeScreenshot(path)
   testthat::expect_snapshot_file(path, "tab1_plot.png")
   # Tab 2 ---
-  # app$setInputs(tabs_id = "Test Specification")
+  # app$setInputs(tabs_id = "tab_2")
   # app$setInputs(mu = 2)
   # app$setInputs(na_rm = FALSE)
   # app$takeScreenshot(path)
