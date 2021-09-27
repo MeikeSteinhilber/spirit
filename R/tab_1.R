@@ -1,5 +1,6 @@
 tab_1 <- tabPanel(
-  "Select Data"
+  title = "Select Data"
+  , value = "tab_1"
   , br()
   , fluidRow(
     column(4,
@@ -24,7 +25,6 @@ tab_1 <- tabPanel(
                 , "Upload File (.csv, .xlsx, .txt)"
                 , accept = ".csv, .xlsx, .txt"
       ),
-      checkboxInput("header", "Header", value = TRUE),
       radioButtons(
         "seperator"
         , "Select Seperator String"

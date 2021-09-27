@@ -3,7 +3,6 @@ test_that("load_data: no data", {
   input <- list(
     upload = NULL,
     seperator = ",",
-    header = TRUE,
     load_example_data = FALSE
   )
   expect_equal(
@@ -26,7 +25,6 @@ test_that("load_data: upload data csv", {
   input <- list(
     upload = list(datapath = path),
     seperator = ",",
-    header = TRUE,
     load_example_data = FALSE
   )
   # test
@@ -41,7 +39,6 @@ test_that("load_data: examplary data", {
   input <- list(
     upload = NULL,
     seperator = ",",
-    header = TRUE,
     load_example_data = TRUE,
     example_data = "df_stress"
   )
@@ -74,7 +71,6 @@ test_that("load_data: upload data & select examle data", {
   input <- list(
     upload = list(datapath = path),
     seperator = ",",
-    header = TRUE,
     load_example_data = TRUE,
     example_data = "df_stress"
   )
@@ -100,7 +96,6 @@ test_that("load_data: upload data txt", {
   input <- list(
     upload = list(datapath = path),
     seperator = ",",
-    header = TRUE,
     load_example_data = FALSE
   )
   # test
@@ -123,7 +118,6 @@ test_that("load_data: upload data xlsx", {
   input <- list(
     upload = list(datapath = path),
     seperator = ",",
-    header = TRUE,
     load_example_data = FALSE
   )
   # test

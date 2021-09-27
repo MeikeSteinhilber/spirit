@@ -5,7 +5,7 @@
   options(shiny.sanitize.errors = FALSE)
 
   ## DOCUMENTATION SETTINGS 
-  #' @import shiny shinyBS tools bslib
+  #' @import shiny shinyBS tools bslib shinytest
   #' @importFrom utils read.csv
   #' @importFrom tibble tibble
   #' @importFrom writexl write_xlsx

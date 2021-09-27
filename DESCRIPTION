@@ -24,7 +24,8 @@ Imports:
     tools,
     tibble,
     writexl,
-    rsconnect
+    rsconnect,
+    shinytest
 Encoding: UTF-8
 Language: en-US
 LazyData: true

@@ -1,5 +1,6 @@
 tab_2 <- tabPanel(
-  "Test Specification"
+  title = "Test Specification"
+  , value = "tab_2"
   , br()
   , sidebarLayout(
     sidebarPanel(

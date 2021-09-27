@@ -1,7 +1,7 @@
 # Base image https://hub.docker.com/u/rocker/
 FROM rocker/shiny:latest
 
-RUN install2.r rsconnect bslib dplyr readxl pkgload shiny shinyBS tools tibble writexl devtools
+RUN install2.r rsconnect bslib dplyr readxl pkgload shiny shinyBS tools tibble writexl devtools shinytest
 RUN R -e "devtools::install_github('MeikeSteinhilber/sprtt')"
 
 # system libraries of general use

@@ -5,6 +5,7 @@ ui <- function(request) {
     uiOutput("description_text"),
     br(),
     tabsetPanel(
+      id = "tabs_id",
       tab_1,
       tab_2
     )
