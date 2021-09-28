@@ -1,8 +1,12 @@
-name: Deploy-App-spirit_development
+name: Deploy-App-spirit-development
 
 # Run on all pull requests
 on:
-  pull_request: {}
+  push:
+    branches: [ develop ]
+  pull_request:
+    branches: [ develop ]
+
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
