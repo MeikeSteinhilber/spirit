@@ -3,6 +3,15 @@ server <- function(input, output, session) {
   # options(shiny.maxRequestSize = 10 * 1024^2)
   
   # create text for the UI
+  output$title_logo <- renderUI({
+    height = 120
+    # width = 120
+    tagList(
+      h1("Spirit"),
+      img(src = "figures/sprtt_logo.png", height = height, align = "right"),
+      img(src = "figures/logo.png", height = height, align = "right")
+    )
+  })
   
   output$description_text <- renderUI({
     tagList(

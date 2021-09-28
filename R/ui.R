@@ -1,6 +1,6 @@
 ui <- function(request) {
   fluidPage(
-    h1("Spirit"),
+    uiOutput("title_logo"),
     strong("App to Calculate Sequential t-Tests"),
     uiOutput("description_text"),
     br(),
